@@ -57,7 +57,9 @@ class LoginPage extends StatelessWidget {
             Container(
               padding: new EdgeInsets.all(30),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/dashboard');
+                },
                 elevation: 8,
                 height: 50,
                 minWidth: MediaQuery.of(context).size.width,
