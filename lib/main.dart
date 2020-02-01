@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sih_rakt/register.dart';
 
 import 'dashboard.dart';
 import 'login.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginPage(),
         '/dashboard': (context) => DashboardPage(),
         '/donate': (context) => DonatePage(),
-        '/request': (context) => DonatePage()
+        '/request': (context) => DonatePage(),
+        '/register': (context) => RegisterPage()
       }
     );
   }

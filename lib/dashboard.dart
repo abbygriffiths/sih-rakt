@@ -40,25 +40,25 @@ class _DasboardPageState extends State<DashboardPage> {
         ],
       ),
       body: Center(
-        child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('$_credits',
-                    style: TextStyle(fontSize: 72, color: Colors.redAccent)),
-                Text('credits', style: TextStyle(fontSize: 20)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    _roundedButton('Donate', () {
-                      Navigator.of(context).pushNamed('/donate');
-                    }, false),
-                    _roundedButton('Request', () {
-                      Navigator.of(context).pushNamed('/request');
-                    }, true),
-                  ],
-                )
-              ],
+          child: SingleChildScrollView(
+              child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text('$_credits',
+              style: TextStyle(fontSize: 72, color: Colors.redAccent)),
+          Text('credits', style: TextStyle(fontSize: 20)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              _roundedButton('Donate', () {
+                Navigator.of(context).pushNamed('/donate');
+              }, false),
+              _roundedButton('Request', () {
+                Navigator.of(context).pushNamed('/request');
+              }, true),
+            ],
+          )
+        ],
       ))),
     );
   }

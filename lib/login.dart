@@ -10,40 +10,20 @@ class LoginPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-              RotatedBox(
-                quarterTurns: 2,
-                child: Icon(
-                  Icons.place,
-                  size: 54,
-                  color: Colors.red,
-                ),
-              ),
-              Text(
-                'RaKT',
-                style: new TextStyle(fontSize: 54),
-              ),
-            ]),
+            Logo(),
             Padding(
               padding: new EdgeInsets.all(20),
             ),
-            Container(
-              padding: new EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
-                decoration: new InputDecoration(hintText: 'Username'),
-              ),
+            LoginFields(
+              hinttext: 'Username',
+              isPassword: false,
             ),
             Padding(
               padding: new EdgeInsets.all(20),
             ),
-            Container(
-              padding: new EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
-                obscureText: true,
-                decoration: new InputDecoration(
-                  hintText: 'Password',
-                ),
-              ),
+            LoginFields(
+              hinttext: 'Password',
+              isPassword: true,
             ),
             Container(
               child: FlatButton(
@@ -51,7 +31,9 @@ class LoginPage extends StatelessWidget {
                   'Not a member? Sign Up!',
                   style: new TextStyle(color: Colors.black),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/register');
+                },
               ),
             ),
             Container(
@@ -72,6 +54,47 @@ class LoginPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Logo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        RotatedBox(
+          quarterTurns: 2,
+          child: Icon(
+            Icons.place,
+            size: 54,
+            color: Colors.red,
+          ),
+        ),
+        Text(
+          'RaKT',
+          style: new TextStyle(fontSize: 54),
+        ),
+      ],
+    );
+  }
+}
+
+class LoginFields extends StatelessWidget {
+  LoginFields({@required this.hinttext, @required this.isPassword, Key key})
+      : super(key: key);
+  final String hinttext;
+  final bool isPassword;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: new EdgeInsets.symmetric(horizontal: 30),
+      child: TextField(
+        decoration: new InputDecoration(hintText: hinttext),
+        obscureText: isPassword,
       ),
     );
   }
