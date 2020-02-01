@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sih_rakt/dashboard.dart';
+
+import 'dashboard.dart';
 import 'login.dart';
+import 'donate.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +18,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => LoginPage(),
-        '/dashboard': (context) => DashboardPage()
+        '/dashboard': (context) => DashboardPage(),
+        '/donate': (context) => DonatePage(),
+        '/request': (context) => DonatePage()
       }
     );
   }
