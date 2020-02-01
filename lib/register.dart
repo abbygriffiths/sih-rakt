@@ -7,64 +7,19 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              padding: new EdgeInsets.only(top: 100),
-              child: Logo(),
-            ),
-            Padding(
-              padding: new EdgeInsets.only(top: 50),
-            ),
-            RegistrationForm(),
-            // Container(
-            //   padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-            //   child: TextField(
-            //     decoration: new InputDecoration(
-            //       hintText: 'Name',
-            //     ),
-            //   ),
-            // ),
-            // Container(
-            //   padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-            //   child: TextField(
-            //     decoration: new InputDecoration(hintText: 'Address'),
-            //   ),
-            // ),
-            // Container(
-            //   padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-            //   child: TextFormField(
-            //     keyboardType: TextInputType.emailAddress,
-            //     decoration: new InputDecoration(hintText: 'E-Mail ID'),
-            //   ),
-            // ),
-            // Container(
-            //   padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-            //   child: TextFormField(
-            //     keyboardType: TextInputType.datetime,
-            //     decoration: new InputDecoration(hintText: 'Date Of Birth'),
-            //   ),
-            // ),
-            // Container(
-            //   padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-            //   child: TextField(
-            //     decoration: new InputDecoration(hintText: 'District'),
-            //   ),
-            // ),
-            // Container(
-            //   padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-            //   child: TextField(
-            //     decoration: new InputDecoration(hintText: 'Nationality'),
-            //   ),
-            // ),
-            // Container(
-            //   padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-            //   child: TextField(
-            //     decoration: new InputDecoration(
-            //         hintText: 'Serious Medical Condition(s), if any'),
-            //   ),
-            // ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: new EdgeInsets.only(top: 100),
+                child: Logo(),
+              ),
+              Padding(
+                padding: new EdgeInsets.only(top: 50),
+              ),
+              RegistrationForm(),
+            ],
+          ),
         ),
       ),
     );
@@ -157,8 +112,12 @@ class _RegistrationFormState extends State<RegistrationForm> {
           padding: new EdgeInsets.symmetric(horizontal: 30),
           child: FlatButton(
             shape: RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(20),side: new BorderSide(color: Colors.redAccent)),
-            child: Text('Date Of Birth', style: new TextStyle(color: Colors.redAccent),),
+                borderRadius: new BorderRadius.circular(20),
+                side: new BorderSide(color: Colors.redAccent)),
+            child: Text(
+              'Date Of Birth',
+              style: new TextStyle(color: Colors.redAccent),
+            ),
             onPressed: () {
               DatePicker.showDatePicker(context,
                   showTitleActions: true,
@@ -169,21 +128,56 @@ class _RegistrationFormState extends State<RegistrationForm> {
             },
           ),
         ),
+        Container(
+          padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+          child: TextFormField(
+            decoration: new InputDecoration(hintText: 'Address'),
+          ),
+        ),
+        Container(
+          padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+          child: TextFormField(
+            decoration: new InputDecoration(hintText: 'District'),
+          ),
+        ),
+        Container(
+          padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+          child: TextFormField(
+            keyboardType: TextInputType.number,
+            decoration: new InputDecoration(hintText: 'PinCode'),
+          ),
+        ),
+        Container(
+          padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+          child: TextFormField(
+            decoration: new InputDecoration(hintText: 'Nationality'),
+          ),
+        ),
+        Container(
+          padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+          child: TextFormField(
+            decoration: new InputDecoration(
+                hintText: 'Serious Medical Condition(s), if any'),
+          ),
+        ),
         new SizedBox(
           height: 30.0,
         ),
-        FlatButton(
-            color: Colors.redAccent,
-            shape: RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(20),
-                side: BorderSide(color: Colors.white)),
-            child: Text('Register', style: TextStyle(color: Colors.white)),
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            onPressed: () {
-              if (_validateInputs()) {
-                Navigator.of(context).pushNamed('/donate');
-              }
-            }),
+        Container(
+          padding: new EdgeInsets.only(bottom: 30),
+          child: FlatButton(
+              color: Colors.redAccent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(20),
+                  side: BorderSide(color: Colors.white)),
+              child: Text('Register', style: TextStyle(color: Colors.white)),
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              onPressed: () {
+                if (_validateInputs()) {
+                  Navigator.of(context).pushNamed('/dashboard');
+                }
+              }),
+        ),
       ],
     );
   }

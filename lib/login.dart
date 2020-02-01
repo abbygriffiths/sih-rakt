@@ -37,14 +37,15 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Container(
+              width: 100,
               padding: new EdgeInsets.all(30),
-              child: MaterialButton(
+              child: FlatButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed('/dashboard');
                 },
-                elevation: 8,
-                height: 50,
-                minWidth: MediaQuery.of(context).size.width,
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(20),
+                    side: new BorderSide(color: Colors.redAccent)),
                 color: Colors.redAccent,
                 child: Text(
                   'Sign In',
