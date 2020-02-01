@@ -61,6 +61,11 @@ class _RegistrationFormState extends State<RegistrationForm> {
   String _email;
   String _mobile;
   int _radioValue = 0;
+
+  String _district = 'Sehore';
+
+  final _districts = ['Sehore', 'Bhopal', 'Indore', 'Mumbai', 'Thane'];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -122,10 +127,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
             onPressed: () {
               DatePicker.showDatePicker(context,
                   showTitleActions: true,
-                  minTime: DateTime(1970, 01, 01),
-                  maxTime: DateTime.now(), onChanged: (date) {
-                print('$date');
-              });
+                  minTime: DateTime(1920, 01, 01),
+                  maxTime: DateTime.now(),
+                  onChanged: (date) {});
             },
           ),
         ),
@@ -135,12 +139,19 @@ class _RegistrationFormState extends State<RegistrationForm> {
             decoration: new InputDecoration(hintText: 'Address'),
           ),
         ),
-        Container(
-          padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-          child: TextFormField(
-            decoration: new InputDecoration(hintText: 'District'),
-          ),
-        ),
+        DropdownButton(
+            items: _districts.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            onChanged: (value) {
+              setState(() {
+                _district = value;
+              });
+            },
+            value: _district),
         Container(
           padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: TextFormField(
@@ -165,7 +176,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
           padding: new EdgeInsets.symmetric(horizontal: 30),
           child: Row(children: <Widget>[
             new Text('Gender:'),
-            SizedBox(width: 20,),
+            SizedBox(
+              width: 20,
+            ),
             new Radio(
               value: 0,
               onChanged: _handleRadioValueChange,
@@ -200,6 +213,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               onPressed: () {
                 if (_validateInputs()) {
                   Navigator.of(context).pushNamed('/dashboard');
+                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('Registered')));
                 }
               }),
         ),
