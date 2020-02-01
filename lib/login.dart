@@ -37,7 +37,6 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Container(
-              width: 100,
               padding: new EdgeInsets.all(30),
               child: FlatButton(
                 onPressed: () {

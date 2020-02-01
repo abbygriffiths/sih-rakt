@@ -60,6 +60,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
   String _name;
   String _email;
   String _mobile;
+  int _radioValue = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -160,6 +161,30 @@ class _RegistrationFormState extends State<RegistrationForm> {
                 hintText: 'Serious Medical Condition(s), if any'),
           ),
         ),
+        Container(
+          padding: new EdgeInsets.symmetric(horizontal: 30),
+          child: Row(children: <Widget>[
+            new Text('Gender:'),
+            SizedBox(width: 20,),
+            new Radio(
+              value: 0,
+              onChanged: _handleRadioValueChange,
+              groupValue: _radioValue,
+              activeColor: Colors.redAccent,
+            ),
+            Text('Male'),
+            SizedBox(
+              width: 80,
+            ),
+            new Radio(
+              value: 1,
+              groupValue: _radioValue,
+              onChanged: _handleRadioValueChange,
+              activeColor: Colors.redAccent,
+            ),
+            Text('Female'),
+          ]),
+        ),
         new SizedBox(
           height: 30.0,
         ),
@@ -180,6 +205,12 @@ class _RegistrationFormState extends State<RegistrationForm> {
         ),
       ],
     );
+  }
+
+  void _handleRadioValueChange(int value) {
+    setState(() {
+      _radioValue = value;
+    });
   }
 
   bool _validateInputs() {
