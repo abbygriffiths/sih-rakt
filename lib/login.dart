@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/rounded_button.dart';
+
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,21 +39,16 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: new EdgeInsets.all(30),
-              child: FlatButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/dashboard');
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20),
-                    side: new BorderSide(color: Colors.redAccent)),
-                color: Colors.redAccent,
-                child: Text(
-                  'Sign In',
-                  style: new TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-            ),
+                padding: new EdgeInsets.all(30),
+                child: RoundedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/dashboard');
+                    },
+                    color: Colors.redAccent,
+                    child: Text(
+                      'Sign In',
+                      style: new TextStyle(color: Colors.white, fontSize: 20),
+                    )))
           ],
         ),
       ),

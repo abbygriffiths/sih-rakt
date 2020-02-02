@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/rounded_button.dart';
+
 class DonatePage extends StatefulWidget {
   @override
   _DonatePageState createState() => _DonatePageState();
@@ -49,14 +51,11 @@ class _DonatePageState extends State<StatefulWidget> {
               });
             },
             value: _district),
-        FlatButton(
+        RoundedButton(
           onPressed: () {
-            Scaffold.of(context).showSnackBar(SnackBar(content: Text('Your request has been noted. We will get back soon')));
-            Navigator.of(context).pushNamed('/dashboard');
+            // Scaffold.of(context).showSnackBar(SnackBar(content: Text('Your request has been noted. We will get back soon')));
+            Navigator.of(context).popAndPushNamed('/dashboard');
           },
-          shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(20),
-              side: new BorderSide(color: Colors.redAccent)),
           color: Colors.redAccent,
           child: Text(
             'Donate',

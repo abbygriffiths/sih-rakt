@@ -2,6 +2,8 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'widgets/rounded_button.dart';
+
 class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -203,17 +205,16 @@ class _RegistrationFormState extends State<RegistrationForm> {
         ),
         Container(
           padding: new EdgeInsets.only(bottom: 30),
-          child: FlatButton(
+          child: RoundedButton(
               color: Colors.redAccent,
-              shape: RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(20),
-                  side: BorderSide(color: Colors.white)),
               child: Text('Register', style: TextStyle(color: Colors.white)),
               padding: EdgeInsets.symmetric(horizontal: 10),
+              borderColor: Colors.white,
               onPressed: () {
                 if (_validateInputs()) {
                   Navigator.of(context).pushNamed('/dashboard');
-                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('Registered')));
+                  Scaffold.of(context)
+                      .showSnackBar(SnackBar(content: Text('Registered')));
                 }
               }),
         ),

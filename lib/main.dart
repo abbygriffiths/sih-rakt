@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sih_rakt/register.dart';
 
+import 'register.dart';
 import 'dashboard.dart';
 import 'login.dart';
 import 'donate.dart';
