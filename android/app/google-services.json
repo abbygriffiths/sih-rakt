@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1070462672113",
+    "firebase_url": "https://sih-rakt.firebaseio.com",
+    "project_id": "sih-rakt",
+    "storage_bucket": "sih-rakt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070462672113:android:9cc4d00a914e6054679d50",
+        "android_client_info": {
+          "package_name": "com.example.sih_rakt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070462672113-30dh7l38uqc6cv7heu0p07anueikrt85.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sih_rakt",
+            "certificate_hash": "82aaf1993d777cf4773573dd31155ffb9d00b559"
+          }
+        },
+        {
+          "client_id": "1070462672113-al1q1lghiabbonb1s09mqucrb3r4spje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIE5Exo4KZG1M3nowr-Or75tJaVMIMVRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070462672113-al1q1lghiabbonb1s09mqucrb3r4spje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

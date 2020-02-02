@@ -5,13 +5,13 @@ import 'dashboard.dart';
 import 'login.dart';
 import 'donate.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(RaktApp());
 
-class MyApp extends StatelessWidget {
+class RaktApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'RaKT',
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
