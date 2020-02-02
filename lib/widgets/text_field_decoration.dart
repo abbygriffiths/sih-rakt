@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 
-InputDecoration textFieldDecoration({hintText}) {
+InputDecoration textFieldDecoration({labelText, color}) {
   return InputDecoration(
-    hintText: hintText,
+    hintText: labelText,
     enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-      color: Colors.redAccent,
+      color: color,
     )),
     focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-      color: Colors.redAccent,
-    )),
+      borderSide: BorderSide(
+        color: color,
+      ),
+    ),
+    errorBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: color,
+      ),
+    ),
   );
 }

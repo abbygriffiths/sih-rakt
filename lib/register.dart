@@ -1,8 +1,9 @@
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sih_rakt/widgets/text_field_decoration.dart';
 
 import 'widgets/rounded_button.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class RegisterPage extends StatelessWidget {
   @override
@@ -13,11 +14,8 @@ class RegisterPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Container(
-                padding: new EdgeInsets.only(top: 100),
+                padding: new EdgeInsets.only(top: 80, bottom: 50),
                 child: Logo(),
-              ),
-              Padding(
-                padding: new EdgeInsets.only(top: 50),
               ),
               RegistrationForm(),
             ],
@@ -84,9 +82,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
     return new Column(
       children: <Widget>[
         Container(
-          padding: new EdgeInsets.symmetric(horizontal: 30),
+          padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: new TextFormField(
-              decoration: const InputDecoration(labelText: 'Name'),
+              decoration:
+                  textFieldDecoration(labelText: 'Name', color: Colors.black54),
               keyboardType: TextInputType.text,
               validator: validateName,
               onSaved: (String val) {
@@ -94,9 +93,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
               }),
         ),
         Container(
-          padding: new EdgeInsets.symmetric(horizontal: 30),
+          padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: new TextFormField(
-              decoration: const InputDecoration(labelText: 'Mobile'),
+              decoration: textFieldDecoration(
+                  labelText: 'Mobile', color: Colors.black54),
               keyboardType: TextInputType.phone,
               validator: validateMobile,
               onSaved: (String val) {
@@ -104,11 +104,12 @@ class _RegistrationFormState extends State<RegistrationForm> {
               }),
         ),
         Container(
-          padding: new EdgeInsets.symmetric(horizontal: 30),
+          padding: new EdgeInsets.symmetric(
+            horizontal: 30, vertical: 5
+          ),
           child: new TextFormField(
-            decoration: const InputDecoration(
-              labelText: 'Email',
-            ),
+            decoration:
+                textFieldDecoration(labelText: 'Email', color: Colors.black54),
             keyboardType: TextInputType.emailAddress,
             validator: validateEmail,
             onSaved: (String val) {
@@ -138,7 +139,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
         Container(
           padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: TextFormField(
-            decoration: new InputDecoration(hintText: 'Address'),
+            decoration: textFieldDecoration(
+                labelText: 'Address', color: Colors.black54),
           ),
         ),
         DropdownButton(
@@ -158,20 +160,23 @@ class _RegistrationFormState extends State<RegistrationForm> {
           padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: TextFormField(
             keyboardType: TextInputType.number,
-            decoration: new InputDecoration(hintText: 'PinCode'),
+            decoration: textFieldDecoration(
+                labelText: 'PinCode', color: Colors.black54),
           ),
         ),
         Container(
           padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: TextFormField(
-            decoration: new InputDecoration(hintText: 'Nationality'),
+            decoration: textFieldDecoration(
+                labelText: 'Nationality', color: Colors.black54),
           ),
         ),
         Container(
           padding: new EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: TextFormField(
-            decoration: new InputDecoration(
-                hintText: 'Serious Medical Condition(s), if any'),
+            decoration: textFieldDecoration(
+                labelText: 'Serious Medical Condition(s), if any',
+                color: Colors.black54),
           ),
         ),
         Container(

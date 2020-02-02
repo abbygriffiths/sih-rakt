@@ -18,14 +18,14 @@ class LoginPage extends StatelessWidget {
               padding: new EdgeInsets.all(20),
             ),
             LoginField(
-              hintText: 'Username',
+              labelText: 'Username',
               isPassword: false,
             ),
             Padding(
               padding: new EdgeInsets.all(20),
             ),
             LoginField(
-              hintText: 'Password',
+              labelText: 'Password',
               isPassword: true,
             ),
             Container(
@@ -81,17 +81,17 @@ class Logo extends StatelessWidget {
 }
 
 class LoginField extends StatelessWidget {
-  LoginField({@required this.hintText, @required this.isPassword, Key key})
+  LoginField({@required this.labelText, @required this.isPassword, Key key})
       : super(key: key);
-  final String hintText;
+  final String labelText;
   final bool isPassword;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: new EdgeInsets.symmetric(horizontal: 30),
-      child: TextField(
-        decoration: textFieldDecoration(hintText: hintText),
+      child: TextFormField(
+        decoration: textFieldDecoration(labelText: labelText, color: Colors.black54 ),
         obscureText: isPassword,
       ),
     );

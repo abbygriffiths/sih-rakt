@@ -24,7 +24,8 @@ class _DonatePageState extends State<StatefulWidget> {
         Container(
           padding: new EdgeInsets.symmetric(horizontal: 30),
           child: TextField(
-            decoration: textFieldDecoration(),
+            decoration:
+                textFieldDecoration(labelText: 'Name', color: Colors.black54),
           ),
         ),
         Padding(
@@ -34,9 +35,8 @@ class _DonatePageState extends State<StatefulWidget> {
           padding: new EdgeInsets.symmetric(horizontal: 30),
           child: TextField(
             obscureText: true,
-            decoration: new InputDecoration(
-              hintText: 'Confirm Password',
-            ),
+            decoration:
+                textFieldDecoration(labelText: 'Name', color: Colors.black54),
           ),
         ),
         DropdownButton(
