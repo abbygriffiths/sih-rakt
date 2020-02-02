@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/rounded_button.dart';
+import 'widgets/text_field_decoration.dart';
 
 class DonatePage extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _DonatePageState extends State<StatefulWidget> {
         Container(
           padding: new EdgeInsets.symmetric(horizontal: 30),
           child: TextField(
-            decoration: new InputDecoration(hintText: 'Username'),
+            decoration: textFieldDecoration(),
           ),
         ),
         Padding(

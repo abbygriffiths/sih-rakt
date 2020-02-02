@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/rounded_button.dart';
+import 'widgets/text_field_decoration.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -16,15 +17,15 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: new EdgeInsets.all(20),
             ),
-            LoginFields(
-              hinttext: 'Username',
+            LoginField(
+              hintText: 'Username',
               isPassword: false,
             ),
             Padding(
               padding: new EdgeInsets.all(20),
             ),
-            LoginFields(
-              hinttext: 'Password',
+            LoginField(
+              hintText: 'Password',
               isPassword: true,
             ),
             Container(
@@ -79,10 +80,10 @@ class Logo extends StatelessWidget {
   }
 }
 
-class LoginFields extends StatelessWidget {
-  LoginFields({@required this.hinttext, @required this.isPassword, Key key})
+class LoginField extends StatelessWidget {
+  LoginField({@required this.hintText, @required this.isPassword, Key key})
       : super(key: key);
-  final String hinttext;
+  final String hintText;
   final bool isPassword;
 
   @override
@@ -90,7 +91,7 @@ class LoginFields extends StatelessWidget {
     return Container(
       padding: new EdgeInsets.symmetric(horizontal: 30),
       child: TextField(
-        decoration: new InputDecoration(hintText: hinttext),
+        decoration: textFieldDecoration(hintText: hintText),
         obscureText: isPassword,
       ),
     );
